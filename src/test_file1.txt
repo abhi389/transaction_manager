@@ -1,0 +1,15 @@
+// R and W test
+// read only and read/write transaction
+log RW.log
+BeginTx 1 R
+Read 1 1
+BeginTx 2 R
+Read 2 1
+Commit 1
+Read 2 2
+BeginTx 3 W
+Read 3 2
+Read 3 3
+Read 3 4
+Commit 2
+commit 3
